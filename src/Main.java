@@ -25,8 +25,8 @@ public class Main {
         checkingForNullHuman.human();
 
 
-        Car.Key carManagement = new Car.Key("Удаленный запуск двигателя в комплектации",
-                "Бесключевой доступ в комплектации");
+        Car.Key carManagement = new Car.Key(true,
+                false);
         Car.Insurance carInsurance = new Car.Insurance(null, 3550.50, "123456789");
 
         Car ladaGrande = new Car("Lada", "Grande", 1.7f, "желтый", 2015,
@@ -108,11 +108,10 @@ public class Main {
 
         Car skodaCadiac = new Car("Skoda", "Cadiac", 2.0f, "синий", 2020,
                 "России", "4-х ступенчатая", "внедорожник",
-                "P503XK190", 4, "летняя", 12);
+                "P503XK190", 4, false);
 
         skodaCadiac.allCar();
-        skodaCadiac.sumAndWinterTires();
-        skodaCadiac.chekNumberCar();
+               skodaCadiac.chekNumberCar();
 
 
     }

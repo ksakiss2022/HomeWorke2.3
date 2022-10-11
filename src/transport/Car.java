@@ -1,6 +1,5 @@
 package transport;
 
-import java.security.Key;
 import java.time.LocalDate;
 
 public class Car {
@@ -19,10 +18,8 @@ public class Car {
     //Регистрационный номер
     public int numberOfSeats;
     // Количество мест
-    public String tires;
+    public boolean winterTires;
     //sign "Summer" or "Winter tires" признак «Летняя» или «Зимняя резина»
-    public int monthNumber;
-
     private Key key;
 
 
@@ -32,20 +29,21 @@ public class Car {
 
         private LocalDate insuranceValidityPeriod;
 
+
         //Срок действия страховки
         private double theCostOfInsurance;
         //Стоимость страховки
         private String insuranceNumber;
 
-        public LocalDate getInsuranceValidityPeriod() {
-            return insuranceValidityPeriod;
-        }
 
-        public void setInsuranceValidityPeriod(LocalDate insuranceValidityPeriod) {
-            this.insuranceValidityPeriod = insuranceValidityPeriod;
-            if (insuranceValidityPeriod == null) {
-                this.insuranceValidityPeriod = LocalDate.now();
+        public Insurance(LocalDate setInsuranceValidityPeriod, double theCostOfInsurance, String insuranceNumber) {
+            this.insuranceValidityPeriod = setInsuranceValidityPeriod;
+
+            if (insuranceNumber.length() > 9) {
+                System.out.println("Номер страховки не правильный");
             }
+            this.theCostOfInsurance = theCostOfInsurance;
+            this.insuranceNumber = insuranceNumber;
         }
 
         public double getTheCostOfInsurance() {
@@ -64,64 +62,61 @@ public class Car {
             this.insuranceNumber = insuranceNumber;
         }
 
-        public Insurance(LocalDate insuranceValidityPeriod, double theCostOfInsurance, String insuranceNumber) {
+        public LocalDate getInsuranceValidityPeriod() {
+            return insuranceValidityPeriod;
+        }
+
+        public void setInsuranceValidityPeriod(LocalDate insuranceValidityPeriod) {
             this.insuranceValidityPeriod = insuranceValidityPeriod;
             if (insuranceValidityPeriod.isBefore(LocalDate.now())) {
                 System.out.println("Нужно срочно ехать оформлять новую страховку!");
-            }
 
-            if (insuranceNumber.length() < 9) {
-                System.out.println("Номер страховки не правильный");
-            }
-            this.theCostOfInsurance = theCostOfInsurance;
-            this.insuranceNumber = insuranceNumber;
-        }
-//Номер страховки
-    }
-
-    public static class Key {
-
-        private String remoteEngineStart;
-        //Удаленный запуск двигателя
-        private String keylessAccess;
-        //Бесключевой доступ
-
-        public Key(String remoteEngineStart, String keylessAccess) {
-            this.remoteEngineStart = remoteEngineStart;
-            if (remoteEngineStart == null) {
-                this.remoteEngineStart = "default";
-            }
-            this.keylessAccess = keylessAccess;
-            if (keylessAccess == null) {
-                this.keylessAccess = "default";
-            }
-        }
-
-        //Бесключевой доступ
-        public String getRemoteEngineStart() {
-            return remoteEngineStart;
-        }
-
-        public void setRemoteEngineStart(String remoteEngineStart) {
-            this.remoteEngineStart = remoteEngineStart;
-            if (remoteEngineStart == null && !remoteEngineStart.isBlank() && !remoteEngineStart.isEmpty()) ;
-            {
-                this.remoteEngineStart = "default";
-            }
-        }
-
-        public String getKeylessAccess() {
-            return keylessAccess;
-        }
-
-        public void setKeylessAccess(String keylessAccess) {
-            this.keylessAccess = keylessAccess;
-            if (keylessAccess == null && !keylessAccess.isBlank() && !keylessAccess.isEmpty()) ;
-            {
-                this.keylessAccess = "default";
-            }
         }
     }
+}
+
+public static class Key {
+
+    private boolean remoteEngineStart;
+    //Удаленный запуск двигателя
+    private boolean keylessAccess;
+    //Бесключевой доступ
+
+    public Key(boolean setRemoteEngineStart, boolean setKeylessAccess) {
+        this.remoteEngineStart = setRemoteEngineStart;
+        this.keylessAccess = setKeylessAccess;
+    }
+
+    //Бесключевой доступ
+    public boolean getRemoteEngineStart() {
+        return remoteEngineStart;
+    }
+
+    public void setRemoteEngineStart(boolean remoteEngineStart) {
+        this.remoteEngineStart = remoteEngineStart;
+        if (remoteEngineStart == true) {
+            this.remoteEngineStart = remoteEngineStart;
+        } else {
+            System.out.println("нет бесключевого доступа");
+        }
+
+    }
+
+
+    public boolean getKeylessAccess() {
+        return keylessAccess;
+    }
+
+    public void setKeylessAccess(boolean keylessAccess) {
+        this.keylessAccess = keylessAccess;
+        if (keylessAccess == true) {
+            this.keylessAccess = keylessAccess;
+        } else {
+            System.out.println("нет автозапуска");
+        }
+    }
+
+}
 
 
     public Car(String brand, String model, float engineVolume, String color, int productionYear,
@@ -155,7 +150,7 @@ public class Car {
 
     public Car(String brand, String model, float engineVolume, String color, int productionYear,
                String productionCountry, String transmission, String bodyType, String registrationNumber,
-               int numberOfSeats, String tires, int monthNumber) {
+               int numberOfSeats, boolean winterTires) {
 
 
         this.transmission = transmission;
@@ -201,15 +196,11 @@ public class Car {
         } else {
             this.numberOfSeats = Math.abs(numberOfSeats);
         }
-        this.tires = tires;
-        if (tires == null) {
-            this.tires = "default";
-        }
-        this.monthNumber = monthNumber;
-        if (monthNumber <= 0) {
-            this.monthNumber = 1;
+        this.winterTires = winterTires;
+        if (winterTires == true) {
+            this.winterTires = winterTires;
         } else {
-            this.monthNumber = Math.abs(monthNumber);
+            System.out.println("смени резину на зимнюю");
         }
     }
 
@@ -234,53 +225,10 @@ public class Car {
         System.out.print("тип кузова " + bodyType + " ,");
         System.out.print("регистрационный номер " + registrationNumber + " ,");
         System.out.print("роличество мест " + numberOfSeats + " ,");
-        System.out.println("резина " + tires + " ");
+        System.out.println("резина " + winterTires + " ");
         System.out.println();
     }
 
-    public void sumAndWinterTires() {
-        switch (this.monthNumber) {
-            case 1:
-                System.out.println("Сейчас лучше ездить на зимних шинах");
-                break;
-            case 2:
-                System.out.println("Сейчас лучше ездить на зимних шинах");
-                break;
-            case 3:
-                System.out.println("Сейчас лучше ездить на зимних шинах");
-                break;
-            case 4:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 5:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 6:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 7:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 8:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 9:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 10:
-                System.out.println("Сейчас лучше ездить на  летних шинах");
-                break;
-            case 11:
-                System.out.println("Сейчас лучше ездить на зимних шинах");
-                break;
-            case 12:
-                System.out.println("Сейчас лучше ездить на зимних шинах");
-        }
-    }
-
-
-    //Добавьте метод проверки, что номер страховки содержит 9 знаков. Если знаков больше или меньше,
-    // то вывести сообщение "Номер страховки некорректный!".
 
     public boolean chekNumberCar() {
         if (registrationNumber.matches("[A-Z]\\d{3}[A-Z]{2}\\d{3}]")) {
@@ -396,12 +344,12 @@ public class Car {
         this.registrationNumber = registrationNumber;
     }
 
-    public String getTires() {
-        return tires;
+    public boolean getWinterTires() {
+        return winterTires;
     }
 
-    public void setTires(String tires) {
-        this.tires = tires;
+    public void setWinterTires(boolean winterTires) {
+        this.winterTires = winterTires;
     }
 
     public String getBrand() {
