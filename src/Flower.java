@@ -3,7 +3,7 @@ public class Flower {
     private String flowerColorName;
     //Цвет цветка (flowerColor);
     private String country;
-//Страна происхождения (country);
+    //Страна происхождения (country);
     private float cost;
     //Стоимость (cost);
     private int lifeSpan;
@@ -22,6 +22,7 @@ public class Flower {
                 + cost + ", " + "срок стояния цветка- " + lifeSpan);
 
     }
+
     public String getFlowerColorName() {
         return flowerColorName;
     }
@@ -33,6 +34,7 @@ public class Flower {
             this.flowerColorName = "белый";
         }
     }
+
     public String getCountry() {
         return country;
     }
@@ -57,6 +59,7 @@ public class Flower {
             this.cost = 1.00f;
         }
     }
+
     public int getLifeSpan() {
         return lifeSpan;
     }
