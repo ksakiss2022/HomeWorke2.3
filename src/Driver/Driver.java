@@ -102,20 +102,5 @@ public abstract class Driver<D extends Transport & Competing> {
                 + getExperience()+" года (лет)");
 
     }
-//    @Override
-//    public String toString() {
-//        return "Имя водителя- "+getDriverSFullName()+", "+
-//                "категория прав- "+getThePresenceOfADriverSLicense()+", "+
-//                "стаж вождения- "+getExperience()+" года (лет)";
-//    }
-
-//    public void printAllDriver() {
-//
-//
-//        System.out.println("Имя водителя " + getDriverSFullName() +", "+
-//                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
-//                + getExperience()+" года (лет)");
-//
-//    }
 }
 

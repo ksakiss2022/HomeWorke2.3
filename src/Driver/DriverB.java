@@ -11,11 +11,4 @@ public class DriverB extends Driver<PassengerCars> {
         super(driverSFullName, 'B', experience, transport);
 
     }
-//    public void printDriverB() {
-//
-//
-//        System.out.println("Водитель " + getDriverSFullName() +", "+
-//                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
-//                + getExperience()+". ");
-//    }
 }
