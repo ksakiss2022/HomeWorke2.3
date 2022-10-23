@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class PassengerCars extends Transport implements Competing {
-
+private final BodyTypePassebgerCars bodyTypePassebgerCars;
 
     public static final String FIRST_SPEED_CHECK_IN_CAR = "Совершить первую поездку без остановок.";
     public static final String SECOND_SPEED_CHECK_IN_CAR = "Совершить вторую поездку с двумя водителями с 1 остановкой.";
@@ -29,9 +29,13 @@ public class PassengerCars extends Transport implements Competing {
     }
 //количество мест
 
-    public PassengerCars(String brand, String model, float engineCapacity, int numberOfSeats) {
+    public PassengerCars(String brand, String model,
+                         float engineCapacity,
+                         int numberOfSeats,
+                         BodyTypePassebgerCars getBodyTypePassebgerCars) {
         super(brand, model, engineCapacity);
         setNumberOfSeats(numberOfSeats);
+        this.bodyTypePassebgerCars=getBodyTypePassebgerCars;
     }
 
     public void countPassengers() {
@@ -75,6 +79,16 @@ public class PassengerCars extends Transport implements Competing {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), numberOfSeats);
+    }
+
+    @Override
+    public void printType() {
+        if (bodyTypePassebgerCars == null) {
+            System.out.println("Данных не достаточно");
+        }else {
+            System.out.println("Тип автомобиля- "+bodyTypePassebgerCars);
+        }
+
     }
 
     public void printPassengerCars() {

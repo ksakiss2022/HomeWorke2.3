@@ -25,9 +25,13 @@ public class TrucksCar extends Transport implements Competing {
         this.bestTime = bestTime;
     }
 
-    public TrucksCar(String brand, String model, float engineCapacity, String color) {
+
+
+    private CapacityTruck capacityTruck;
+    public TrucksCar(String brand, String model, float engineCapacity, String color,CapacityTruck capacityTruck) {
         super(brand, model, engineCapacity);
         setColor(color);
+        this.capacityTruck=capacityTruck;
     }
 
     @Override
@@ -42,6 +46,16 @@ public class TrucksCar extends Transport implements Competing {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), color);
+    }
+
+    @Override
+    public void printType() {
+        if (capacityTruck == null) {
+            System.out.println("Данных по грузовому автомобилю нет");
+        }else {
+
+            System.out.println(capacityTruck.getTypeOfLoadCapacity()+" от "+capacityTruck.getFrom()+" до "+capacityTruck.getTo());
+        }
     }
 
     public void turnOnTheHeadlights() {
@@ -88,7 +102,13 @@ public class TrucksCar extends Transport implements Competing {
         return ALL_PIT_STOP;
     }
 
+    public CapacityTruck getCapacityTruck() {
+        return capacityTruck;
+    }
 
+    public void setCapacityTruck(CapacityTruck capacityTruck) {
+        this.capacityTruck = capacityTruck;
+    }
     @Override
     public String[] getBestLapTime() {
         return bestTime;

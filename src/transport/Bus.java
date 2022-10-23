@@ -25,11 +25,23 @@ public class Bus extends Transport implements Competing {
     public void setTime(String[] time) {
         this.time = time;
     }
-//стоимость проезда
 
-    public Bus(String brand, String model, float engineCapacity, int fare) {
+    public BusCapacity getBusCapacity() {
+        return busCapacity;
+    }
+
+    public void setBusCapacity(BusCapacity busCapacity) {
+        this.busCapacity = busCapacity;
+    }
+
+    //стоимость проезда
+    private BusCapacity busCapacity;
+
+    public Bus(String brand, String model, float engineCapacity, int fare, BusCapacity busCapacity) {
         super(brand, model, engineCapacity);
         setFare(fare);
+        this.busCapacity = busCapacity;
+
     }
 
     @Override
@@ -45,6 +57,17 @@ public class Bus extends Transport implements Competing {
     public int hashCode() {
         return Objects.hash(super.hashCode(), fare);
     }
+
+    @Override
+    public void printType() {
+        if (busCapacity == null) {
+            System.out.println("Данных по автобусу нет");
+        } else {
+
+            System.out.println(busCapacity.typeOfCapacity + " от "+busCapacity.getFrom() + " до "+busCapacity.getTo());
+        }
+    }
+
 
     public void collectMoneyForTravel() {
         System.out.println("Собрать деньги за проезд");
@@ -77,6 +100,8 @@ public class Bus extends Transport implements Competing {
         super.printTransport();
         System.out.println("Стоимость проезда " + fare);
         collectMoneyForTravel();
+
+
     }
 
     @Override

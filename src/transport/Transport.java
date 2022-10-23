@@ -71,6 +71,9 @@ public abstract class Transport {
         }
     }
 
+    public void printType() {
+
+    }
     public void printTransport() {
         System.out.println("Марка транспортного средства- " + brand + ",");
         System.out.println("модель транспортного средства- " + model + ", ");

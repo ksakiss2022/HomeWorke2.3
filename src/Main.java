@@ -13,116 +13,171 @@ import transport.*;
 public class Main {
     public static void main(String[] args) {
 
-        TrucksCar zil = new TrucksCar("Зил", "4", 5.0f, "Синий");
-        zil.printTransport();
-        zil.turnOnTheHeadlights();
-        zil.trainMaxSpeed(TrucksCar.FIRST_SPEED_CHECK_IN);
-        zil.trainlaptime("2 часа 45 минут");
-        zil.trainMaxSpeed(TrucksCar.SECOND_SPEED_CHECK_IN);
-        zil.trainlaptime("3 часа 45 минут");
-        zil.trainMaxSpeed(TrucksCar.THIRD_SPEED_CHECK_IN);
-        zil.trainlaptime("5 часов 5 минут");
+        TrucksCar zil = new TrucksCar("Зил",
+                "4",
+                5.0f,
+                "Синий",
+                CapacityTruck.N1);
+//        zil.printTransport();
+//        zil.turnOnTheHeadlights();
+//        zil.trainMaxSpeed(TrucksCar.FIRST_SPEED_CHECK_IN);
+//        zil.trainlaptime("2 часа 45 минут");
+//        zil.trainMaxSpeed(TrucksCar.SECOND_SPEED_CHECK_IN);
+//        zil.trainlaptime("3 часа 45 минут");
+//        zil.trainMaxSpeed(TrucksCar.THIRD_SPEED_CHECK_IN);
+//        zil.trainlaptime("5 часов 5 минут");
+        zil.printType();
         System.out.println();
-        TrucksCar ural = new TrucksCar("Урал", "2", 5.0f, "белый");
-        ural.printTransport();
-        ural.turnOnTheHeadlights();
+        TrucksCar ural = new TrucksCar("Урал",
+                "2",
+                5.0f,
+                "белый",
+                CapacityTruck.N3);
+//        ural.printTransport();
+//        ural.turnOnTheHeadlights();
+        ural.printType();
         System.out.println();
-        TrucksCar kamaz = new TrucksCar("Skoda", "coroc", 1.4f, "серый");
-        kamaz.printTransport();
-        kamaz.turnOnTheHeadlights();
-        kamaz.trainlaptime(" 20:22 ");
+        TrucksCar kamaz = new TrucksCar("Skoda",
+                "coroc",
+                1.4f,
+                "серый",
+                CapacityTruck.N2);
+//        kamaz.printTransport();
+//        kamaz.turnOnTheHeadlights();
+//        kamaz.trainlaptime(" 20:22 ");
+        kamaz.printType();
         System.out.println();
-        TrucksCar gaz = new TrucksCar("Hynday", "accent", 2.0f, "красный");
-        gaz.printTransport();
-        gaz.turnOnTheHeadlights();
-        gaz.trainPitStop(TrucksCar.FIRST_PIT_STOP);
-        gaz.trainPitStop(TrucksCar.SECOND_PIT_STOP);
-        gaz.trainPitStop(TrucksCar.THIRD_PIT_STOP);
-        System.out.println();
-
-        PassengerCars honda = new PassengerCars("Хонда", "2.0", 2.0f, 4);
-        honda.printPassengerCars();
-        honda.startMovement();
-        honda.trainMaxSpeed(PassengerCars.FIRST_SPEED_CHECK_IN_CAR);
-        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
-        honda.trainlaptime("1 день ");
-        honda.trainMaxSpeed(PassengerCars.SECOND_SPEED_CHECK_IN_CAR);
-        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
-        honda.trainPitStop(PassengerCars.SECOND_STOP_FOR_A_REST);
-        honda.trainlaptime("1.5 дня ");
-        honda.trainMaxSpeed(PassengerCars.THIRD_SPEED_CHECK_IN_CAR);
-        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
-        honda.trainPitStop(PassengerCars.SECOND_STOP_FOR_A_REST);
-        honda.trainPitStop(PassengerCars.THIRD_STOP_FOR_A_REST);
-        honda.trainlaptime("2 дня ");
-        System.out.println();
-        PassengerCars bmw = new PassengerCars("БМВ", "Х5", 5.0f, 6);
-        bmw.printPassengerCars();
-        bmw.startMovement();
-        System.out.println();
-        PassengerCars skoda = new PassengerCars("Шкода", "карок", 1.4f, 4);
-        skoda.printPassengerCars();
-        skoda.startMovement();
-        System.out.println();
-        PassengerCars hyunday = new PassengerCars("Хюндай", "аксцент", 2.0f, 5);
-        hyunday.printPassengerCars();
-        hyunday.startMovement();
+        TrucksCar gaz = new TrucksCar("Hynday",
+                "accent",
+                2.0f,
+                "красный",
+                CapacityTruck.N1);
+//        gaz.printTransport();
+//        gaz.turnOnTheHeadlights();
+//        gaz.trainPitStop(TrucksCar.FIRST_PIT_STOP);
+//        gaz.trainPitStop(TrucksCar.SECOND_PIT_STOP);
+//        gaz.trainPitStop(TrucksCar.THIRD_PIT_STOP);
+        gaz.printType();
         System.out.println();
 
-        Bus mersedecBus = new Bus("Автобус Мерседес", "222", 3.30f, 65);
-        mersedecBus.printBus();
-        mersedecBus.trainMaxSpeed(Bus.FIRST_SPEED_CHECK_IN_BUS);
-        mersedecBus.trainlaptime("1 час 10 минут");
-        mersedecBus.trainMaxSpeed(Bus.SECOND_SPEED_CHECK_IN_BUS);
-        mersedecBus.trainlaptime("1 час 55 минут");
-        mersedecBus.trainMaxSpeed(Bus.THIRD_SPEED_CHECK_IN_BUS);
-        mersedecBus.trainlaptime("2 часа");
+        PassengerCars honda = new PassengerCars("Хонда",
+                "2.0",
+                2.0f,
+                4,
+                BodyTypePassebgerCars.SEDAN);
+//        honda.printPassengerCars();
+//        honda.startMovement();
+//        honda.trainMaxSpeed(PassengerCars.FIRST_SPEED_CHECK_IN_CAR);
+//        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
+//        honda.trainlaptime("1 день ");
+//        honda.trainMaxSpeed(PassengerCars.SECOND_SPEED_CHECK_IN_CAR);
+//        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
+//        honda.trainPitStop(PassengerCars.SECOND_STOP_FOR_A_REST);
+//        honda.trainlaptime("1.5 дня ");
+//        honda.trainMaxSpeed(PassengerCars.THIRD_SPEED_CHECK_IN_CAR);
+//        honda.trainPitStop(PassengerCars.FIRST_STOP_FOR_A_REST);
+//        honda.trainPitStop(PassengerCars.SECOND_STOP_FOR_A_REST);
+//        honda.trainPitStop(PassengerCars.THIRD_STOP_FOR_A_REST);
+//        honda.trainlaptime("2 дня ");
+        honda.printType();
         System.out.println();
-        Bus hondaBus = new Bus("Автобу хонда", "23", 4.0f, 55);
-        hondaBus.printBus();
+        PassengerCars bmw = new PassengerCars("БМВ",
+                "Х5",
+                5.0f,
+                6,
+                BodyTypePassebgerCars.PICKUP_TRUCK);
+//        bmw.printPassengerCars();
+//        bmw.startMovement();
+        bmw.printType();
         System.out.println();
-        Bus gazellBus = new Bus("Автобус газель", "газ2", 4.4f, 65);
-        gazellBus.printBus();
-        gazellBus.trainlaptime("11:35");
+        PassengerCars skoda = new PassengerCars("Шкода",
+                "карок",
+                1.4f,
+                4,
+                BodyTypePassebgerCars.MINIVAN);
+//        skoda.printPassengerCars();
+//        skoda.startMovement();
+        skoda.printType();
         System.out.println();
-        Bus liazBus = new Bus("Автобус лиаз", "лиаз3", 3.0f, 35);
-        liazBus.printBus();
-        liazBus.trainPitStop(Bus.FIRST_TAKE_A_BREAK);
-        liazBus.trainPitStop(Bus.SECOND_TAKE_A_BREAK);
-        liazBus.trainPitStop(Bus.THIRD_TAKE_A_BREAK);
+        PassengerCars hyunday = new PassengerCars("Хюндай",
+                "аксцент",
+                2.0f,
+                5,
+                BodyTypePassebgerCars.VAN);
+//        hyunday.printPassengerCars();
+//        hyunday.startMovement();
+        hyunday.printType();
         System.out.println();
 
-        chekCompeting(ural, bmw, hondaBus);
+        Bus mersedecBus = new Bus("Автобус Мерседес", "222", 3.30f, 65,BusCapacity.BIG);
+//        mersedecBus.printBus();
+//        mersedecBus.trainMaxSpeed(Bus.FIRST_SPEED_CHECK_IN_BUS);
+//        mersedecBus.trainlaptime("1 час 10 минут");
+//        mersedecBus.trainMaxSpeed(Bus.SECOND_SPEED_CHECK_IN_BUS);
+//        mersedecBus.trainlaptime("1 час 55 минут");
+//        mersedecBus.trainMaxSpeed(Bus.THIRD_SPEED_CHECK_IN_BUS);
+//        mersedecBus.trainlaptime("2 часа");
+        mersedecBus.printType();
+        System.out.println();
+        Bus hondaBus = new Bus("Автобу хонда",
+                "23",
+                4.0f,
+                55,
+                BusCapacity.AVERAGE);
+//        hondaBus.printBus();
+        System.out.println();
+        Bus gazellBus = new Bus("Автобус газель",
+                "газ2",
+                4.4f,
+                66,
+                BusCapacity.ESPECIALLY_SMALL);
+//        gazellBus.printBus();
+//        gazellBus.trainlaptime("11:35");
+        gazellBus.printType();
+        System.out.println();
+        Bus liazBus = new Bus("Автобус лиаз",
+                "лиаз3",
+                3.0f,
+                35,
+                BusCapacity.ESPECIALLY_SMALL);
+//        liazBus.printBus();
+//        liazBus.trainPitStop(Bus.FIRST_TAKE_A_BREAK);
+//        liazBus.trainPitStop(Bus.SECOND_TAKE_A_BREAK);
+//        liazBus.trainPitStop(Bus.THIRD_TAKE_A_BREAK);
+        liazBus.printType();
         System.out.println();
 
-        checkTrainPitStop(kamaz, skoda, gazellBus);
-        System.out.println();
-
-        DriverC zurab = new DriverC("Зураб", 'C', 15, ural);
-        zurab.printDriver();
-        DriverB mihail = new DriverB("Михаил", 'B', 24, honda);
-        mihail.printDriver();
-        DriverD oleg = new DriverD("Олег", 'D', 12, liazBus);
-        oleg.printDriver();
-
-    }
-
-    public static void chekCompeting(Competing... allTransports) {
-        for (Competing allTransport : allTransports) {
-            for (String maxSpeed : allTransport.getMaximumSpeed()) {
-                allTransport.trainMaxSpeed(maxSpeed);
-
-            }
-        }
-    }
-
-    public static void checkTrainPitStop(Competing... checkPitStops) {
-        for (Competing checkPitStop : checkPitStops) {
-            for (String pitStop : checkPitStop.getPitStop()) {
-                checkPitStop.trainPitStop(pitStop);
-            }
-
-        }
+//        chekCompeting(ural, bmw, hondaBus);
+//        System.out.println();
+//
+//        checkTrainPitStop(kamaz, skoda, gazellBus);
+//        System.out.println();
+//
+//        DriverC zurab = new DriverC("Зураб", 'C', 15, ural);
+//        zurab.printDriver();
+//        DriverB mihail = new DriverB("Михаил", 'B', 24, honda);
+//        mihail.printDriver();
+//        DriverD oleg = new DriverD("Олег", 'D', 12, liazBus);
+//        oleg.printDriver();
+//
+//    }
+//
+//    public static void chekCompeting(Competing... allTransports) {
+//        for (Competing allTransport : allTransports) {
+//            for (String maxSpeed : allTransport.getMaximumSpeed()) {
+//                allTransport.trainMaxSpeed(maxSpeed);
+//
+//            }
+//        }
+//    }
+//
+//    public static void checkTrainPitStop(Competing... checkPitStops) {
+//        for (Competing checkPitStop : checkPitStops) {
+//            for (String pitStop : checkPitStop.getPitStop()) {
+//                checkPitStop.trainPitStop(pitStop);
+//            }
+//
+//        }
 
  }
 }
