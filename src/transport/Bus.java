@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Bus extends Transport implements Competing {
+
     public static final String FIRST_SPEED_CHECK_IN_BUS = "Совершить первую поездку по маршруту.";
     public static final String SECOND_SPEED_CHECK_IN_BUS = "Совершить вторую поездку по маршруту в час пик.";
     public static final String THIRD_SPEED_CHECK_IN_BUS = "Совершить третью поездку по маршруту со всеми остановками в час пик.";

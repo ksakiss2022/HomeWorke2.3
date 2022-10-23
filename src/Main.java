@@ -99,12 +99,11 @@ public class Main {
         System.out.println();
 
         DriverC zurab = new DriverC("Зураб", 'C', 15, ural);
-        zurab.printDriverC();
+        zurab.printDriver();
         DriverB mihail = new DriverB("Михаил", 'B', 24, honda);
-        System.out.println(mihail);
         mihail.printDriver();
         DriverD oleg = new DriverD("Олег", 'D', 12, liazBus);
-        oleg.printDriverD();
+        oleg.printDriver();
 
     }
 

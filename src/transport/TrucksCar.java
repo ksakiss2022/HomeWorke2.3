@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class TrucksCar extends Transport implements Competing {
+
     private String color;
     public static final String FIRST_SPEED_CHECK_IN = "Совершить первый заезд на скорость на треке.";
     public static final String SECOND_SPEED_CHECK_IN = "Совершить второй заезд на скорость по горной метности.";

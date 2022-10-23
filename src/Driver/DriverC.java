@@ -13,12 +13,12 @@ public class DriverC extends Driver<TrucksCar> {
         super(driverSFullName, thePresenceOfADriverSLicense, experience, transport);
 
     }
-    public void printDriverC() {
-
-
-        System.out.println("Имя водителя " + getDriverSFullName() +", "+
-                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
-                + getExperience()+" года (лет)");
-        printDriver();
-    }
+//    public void printDriverC() {
+//
+//
+//        System.out.println("Имя водителя " + getDriverSFullName() +", "+
+//                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
+//                + getExperience()+" года (лет)");
+//        printDriver();
+//    }
 }

@@ -96,13 +96,26 @@ public abstract class Driver<D extends Transport & Competing> {
         System.out.println("Водитель " + driverSFullName +", "+
                 "управляет транспортом- " + transport.getBrand() + ", "+"модель- "
                 + transport.getModel()+", "+"прошел отбор на участие в соревнованиях.");
-    }
-    @Override
-    public String toString() {
-        return "Имя водителя- "+getDriverSFullName()+", "+
-                "категория прав- "+getThePresenceOfADriverSLicense()+", "+
-                "стаж вождения- "+getExperience()+" года (лет)";
-    }
 
+        System.out.println("Имя водителя " + getDriverSFullName() +", "+
+                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
+                + getExperience()+" года (лет)");
+
+    }
+//    @Override
+//    public String toString() {
+//        return "Имя водителя- "+getDriverSFullName()+", "+
+//                "категория прав- "+getThePresenceOfADriverSLicense()+", "+
+//                "стаж вождения- "+getExperience()+" года (лет)";
+//    }
+
+//    public void printAllDriver() {
+//
+//
+//        System.out.println("Имя водителя " + getDriverSFullName() +", "+
+//                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
+//                + getExperience()+" года (лет)");
+//
+//    }
 }
 
