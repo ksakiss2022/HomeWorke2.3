@@ -1,5 +1,7 @@
 package transport;
 
+import HomeWorke2_7.PassDiagnosticsException;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -168,5 +170,23 @@ public class TrucksCar extends Transport implements Competing {
 
         }
 
+
+    }
+
+    int yearDiagnostic;
+
+    public TrucksCar(String brand, String model, float engineCapacity, int yearDiagnostic) {
+        super(brand, model, engineCapacity);
+        this.yearDiagnostic = yearDiagnostic;
+    }
+
+    public static boolean checkDiagnosticTruck(TrucksCar trucksCar) throws PassDiagnosticsException {
+
+        if (trucksCar.yearDiagnostic >= 2020 && trucksCar.yearDiagnostic <= 2022){
+            System.out.println("Диагностику проходить не нужно.");
+        }else {
+            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+        }
+        return false;
     }
 }

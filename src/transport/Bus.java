@@ -104,6 +104,7 @@ public class Bus extends Transport implements Competing {
 
     }
 
+
     @Override
     public String[] getPitStop() {
         return ALL_TAKE_A_BREAK;
@@ -169,7 +170,7 @@ public class Bus extends Transport implements Competing {
         }
 
     }
-}
+
 //    public Bus(String brand,
 //               String model,
 //               int productionYear,
@@ -179,14 +180,14 @@ public class Bus extends Transport implements Competing {
 //        super(brand, model, productionYear, productionCountry, color, movementSpeed);
 //
 //    }
-//
+
 //    @Override
 //    public void refill() {
 //        System.out.println("Заправлять бензином или дизелем на заправке.");
 //    }
-//
+
 //    public void bus() {
 //        super.transport();
 //    }
-//
-//}
+
+}

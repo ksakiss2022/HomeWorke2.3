@@ -1,5 +1,7 @@
 package transport;
 
+import HomeWorke2_7.PassDiagnosticsException;
+
 import java.util.Objects;
 
 public abstract class Transport {
@@ -7,6 +9,8 @@ public abstract class Transport {
         setBrand(brand);
         setModel(model);
     }
+
+
 
     private String brand;
     private String model;
@@ -74,6 +78,8 @@ public abstract class Transport {
     public void printType() {
 
     }
+
+
     public void printTransport() {
         System.out.println("Марка транспортного средства- " + brand + ",");
         System.out.println("модель транспортного средства- " + model + ", ");
@@ -90,10 +96,11 @@ public abstract class Transport {
 
     }
 
-}
-//    protected int productionYear;
-//    protected String productionCountry;
-//    protected String color;
+
+
+    protected int productionYear;
+    protected String productionCountry;
+    protected String color;
 
 
 //       public Transport(String brand,
@@ -129,12 +136,17 @@ public abstract class Transport {
 //        this.color = color;
 //        this.movementSpeed = movementSpeed;
 //    }
-
+//
+//    public abstract void refill();
+//
+//    protected void transport() {
+//    }
+//}
 //    public abstract class Refill {
 //        private boolean refuelingWithElectricity;
 //        private boolean refuelingWithGasoline;
 //        private boolean refuelingWithDieselFuel;
-
+//
 //        public Refill(boolean refuelingWithElectricity, boolean refuelingWithGasoline, boolean refuelingWithDieselFuel) {
 //            setRefuelingWithDieselFuel(refuelingWithDieselFuel);
 //            setRefuelingWithElectricity(refuelingWithElectricity);
@@ -240,7 +252,7 @@ public abstract class Transport {
 //            this.movementSpeed = 100;
 //        }
 //    }
-//
+
 //    public void transport() {
 //
 //        System.out.print("Вид трансорта " + getBrand() + ", ");
@@ -250,5 +262,5 @@ public abstract class Transport {
 //        System.out.print("скорость передвижения " + getMovementSpeed() + ". ");
 //        System.out.println();
 //    }
-//}
+}
 

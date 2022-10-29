@@ -1,5 +1,7 @@
 package transport;
 
+import HomeWorke2_7.PassDiagnosticsException;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -52,6 +54,7 @@ private final BodyTypePassebgerCars bodyTypePassebgerCars;
         if (numberOfSeats <= 0) {
             this.numberOfSeats = 10;
         }
+
     }
 
 
@@ -163,6 +166,28 @@ private final BodyTypePassebgerCars bodyTypePassebgerCars;
                 System.out.println("Остановка не предусмотрена.");
 
         }
+    }
+
+
+    public PassengerCars(String brand, String model, BodyTypePassebgerCars bodyTypePassebgerCars, int yearDiagnostic) {
+        super(brand, model);
+        this.bodyTypePassebgerCars = bodyTypePassebgerCars;
+        this.yearDiagnostic = yearDiagnostic;
+    }
+
+    int yearDiagnostic;
+    public int getYearDiagnostic() {
+        return yearDiagnostic;
+    }
+
+    public static boolean checkDiagnosticPassengerCars(PassengerCars passengerCars) throws PassDiagnosticsException {
+
+        if (passengerCars.yearDiagnostic >= 2020 && passengerCars.yearDiagnostic <= 2022){
+            System.out.println("Диагностику проходить не нужно.");
+        }else {
+            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+        }
+        return false;
     }
 }
 

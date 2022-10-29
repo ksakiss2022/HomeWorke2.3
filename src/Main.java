@@ -109,7 +109,7 @@ public class Main {
         hyunday.printType();
         System.out.println();
 
-        Bus mersedecBus = new Bus("Автобус Мерседес", "222", 3.30f, 65,BusCapacity.BIG);
+        Bus mersedecBus = new Bus("Автобус Мерседес", "222", 3.30f, 65, BusCapacity.BIG);
 //        mersedecBus.printBus();
 //        mersedecBus.trainMaxSpeed(Bus.FIRST_SPEED_CHECK_IN_BUS);
 //        mersedecBus.trainlaptime("1 час 10 минут");
@@ -146,6 +146,7 @@ public class Main {
 //        liazBus.trainPitStop(Bus.THIRD_TAKE_A_BREAK);
         liazBus.printType();
         System.out.println();
+
 
 //        chekCompeting(ural, bmw, hondaBus);
 //        System.out.println();
