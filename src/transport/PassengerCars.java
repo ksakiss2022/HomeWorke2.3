@@ -93,6 +93,22 @@ private final BodyTypePassebgerCars bodyTypePassebgerCars;
         }
 
     }
+    int yearDiagnosticPC;
+        public PassengerCars(String brand, String model, BodyTypePassebgerCars bodyTypePassebgerCars, int yearDiagnostic) {
+        super(brand, model);
+        this.bodyTypePassebgerCars = bodyTypePassebgerCars;
+        this.yearDiagnosticPC = yearDiagnostic;
+    }
+    @Override
+    public boolean diagnosticTransport() throws PassDiagnosticsException { if (yearDiagnosticPC>= 2020 &&
+            yearDiagnosticPC <= 2022){
+        System.out.println("Диагностику проходить не нужно.");
+    }else {
+        throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+
+    }
+        return false;
+    }
 
     public void printPassengerCars() {
         super.printTransport();
@@ -169,25 +185,25 @@ private final BodyTypePassebgerCars bodyTypePassebgerCars;
     }
 
 
-    public PassengerCars(String brand, String model, BodyTypePassebgerCars bodyTypePassebgerCars, int yearDiagnostic) {
-        super(brand, model);
-        this.bodyTypePassebgerCars = bodyTypePassebgerCars;
-        this.yearDiagnostic = yearDiagnostic;
-    }
+//    public PassengerCars(String brand, String model, BodyTypePassebgerCars bodyTypePassebgerCars, int yearDiagnostic) {
+//        super(brand, model);
+//        this.bodyTypePassebgerCars = bodyTypePassebgerCars;
+//        this.yearDiagnostic = yearDiagnostic;
+//    }
 
-    int yearDiagnostic;
-    public int getYearDiagnostic() {
-        return yearDiagnostic;
-    }
-
-    public static boolean checkDiagnosticPassengerCars(PassengerCars passengerCars) throws PassDiagnosticsException {
-
-        if (passengerCars.yearDiagnostic >= 2020 && passengerCars.yearDiagnostic <= 2022){
-            System.out.println("Диагностику проходить не нужно.");
-        }else {
-            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
-        }
-        return false;
-    }
+//    int yearDiagnostic;
+//    public int getYearDiagnostic() {
+//        return yearDiagnostic;
+//    }
+//
+//    public static boolean checkDiagnosticPassengerCars(PassengerCars passengerCars) throws PassDiagnosticsException {
+//
+//        if (passengerCars.yearDiagnostic >= 2020 && passengerCars.yearDiagnostic <= 2022){
+//            System.out.println("Диагностику проходить не нужно.");
+//        }else {
+//            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+//        }
+//        return false;
+//    }
 }
 

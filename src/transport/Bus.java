@@ -68,6 +68,11 @@ public class Bus extends Transport implements Competing {
         }
     }
 
+    @Override
+    public boolean diagnosticTransport() {
+        return false;
+    }
+
 
     public void collectMoneyForTravel() {
         System.out.println("Собрать деньги за проезд");

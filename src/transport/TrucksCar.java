@@ -60,7 +60,7 @@ public class TrucksCar extends Transport implements Competing {
         }
     }
 
-    public void turnOnTheHeadlights() {
+     public void turnOnTheHeadlights() {
         System.out.println("При движении необходимо включать фары.");
 
     }
@@ -152,41 +152,40 @@ public class TrucksCar extends Transport implements Competing {
 
     @Override
     public void trainPitStop(String pitStop) {
-        System.out.println("Пит-Стоп для Грузового транспорта.");
-        switch (pitStop) {
-            case FIRST_PIT_STOP:
-                System.out.println("Пит-Стоп 1.");
-                break;
-            case SECOND_PIT_STOP:
-                System.out.println("Пит-Сто 2.");
-                break;
-            case THIRD_PIT_STOP:
-                System.out.println("Пит стоп 3.");
-
-                break;
-            default:
-                System.out.println("Не предусмотрен Пит-Стоп.");
-
-
-        }
-
 
     }
+
 
     int yearDiagnostic;
-
     public TrucksCar(String brand, String model, float engineCapacity, int yearDiagnostic) {
-        super(brand, model, engineCapacity);
-        this.yearDiagnostic = yearDiagnostic;
-    }
-
-    public static boolean checkDiagnosticTruck(TrucksCar trucksCar) throws PassDiagnosticsException {
-
-        if (trucksCar.yearDiagnostic >= 2020 && trucksCar.yearDiagnostic <= 2022){
+       super(brand, model, engineCapacity);
+       this.yearDiagnostic = yearDiagnostic;
+  }
+    @Override
+    public boolean diagnosticTransport() throws PassDiagnosticsException {
+        if (yearDiagnostic>= 2020 && yearDiagnostic <= 2022){
             System.out.println("Диагностику проходить не нужно.");
-        }else {
+       }else {
             throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+
         }
         return false;
     }
+
+
+//
+//    public TrucksCar(String brand, String model, float engineCapacity, int yearDiagnostic) {
+//        super(brand, model, engineCapacity);
+//        this.yearDiagnostic = yearDiagnostic;
+//    }
+//
+//    public static boolean checkDiagnosticTruck(TrucksCar trucksCar) throws PassDiagnosticsException {
+//
+//        if (trucksCar.yearDiagnostic >= 2020 && trucksCar.yearDiagnostic <= 2022){
+//            System.out.println("Диагностику проходить не нужно.");
+//        }else {
+//            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+//        }
+//        return false;
+//    }
 }

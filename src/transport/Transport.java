@@ -96,8 +96,6 @@ public abstract class Transport {
 
     }
 
-
-
     protected int productionYear;
     protected String productionCountry;
     protected String color;
@@ -262,5 +260,6 @@ public abstract class Transport {
 //        System.out.print("скорость передвижения " + getMovementSpeed() + ". ");
 //        System.out.println();
 //    }
+    public abstract boolean diagnosticTransport() throws PassDiagnosticsException;
 }
 

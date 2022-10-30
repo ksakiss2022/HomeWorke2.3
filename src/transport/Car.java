@@ -39,6 +39,11 @@ public class Car extends Transport {
 
     }
 
+    @Override
+    public boolean diagnosticTransport() {
+        return false;
+    }
+
 //    public Car(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
 //        super(brand, model, productionYear, productionCountry, color, movementSpeed);
 //
@@ -306,25 +311,25 @@ public class Car extends Transport {
 
 
 
-    int yearDiagnostic;
-    public Car(String brand, String model, int yearDiagnostic) {
-        super(brand, model);
-        this.yearDiagnostic = yearDiagnostic;
-    }
+//    int yearDiagnostic;
+//    public Car(String brand, String model, int yearDiagnostic) {
+//        super(brand, model);
+//        this.yearDiagnostic = yearDiagnostic;
+//    }
 
-    public int getYearDiagnostic() {
-        return yearDiagnostic;
-    }
-
-    public static boolean checkDiagnostic(Car car) throws PassDiagnosticsException{
-
-        if (car.yearDiagnostic >= 2020 && car.yearDiagnostic <= 2022){
-            System.out.println("Диагностику проходить не нужно.");
-        }else {
-            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
-        }
-        return false;
-    }
+//    public int getYearDiagnostic() {
+//        return yearDiagnostic;
+//    }
+//
+//    public static boolean checkDiagnostic(Car car) throws PassDiagnosticsException{
+//
+//        if (car.yearDiagnostic >= 2020 && car.yearDiagnostic <= 2022){
+//            System.out.println("Диагностику проходить не нужно.");
+//        }else {
+//            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+//        }
+//        return false;
+//    }
 
 }
 

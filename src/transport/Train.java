@@ -50,6 +50,11 @@ public class Train extends Transport {
 
     }
 
+    @Override
+    public boolean diagnosticTransport() {
+        return false;
+    }
+
 //    public Train(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
 //        super(brand, model, productionYear, productionCountry, color, movementSpeed);
 //    }

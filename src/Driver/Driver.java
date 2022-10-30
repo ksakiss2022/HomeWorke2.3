@@ -8,19 +8,16 @@ public abstract class Driver<D extends Transport & Competing> {
 
     final private String driverSFullName;
 
-
-    final private Character thePresenceOfADriverSLicense;
+    private Character thePresenceOfADriverSLicense;
     //Наличие водительских прав
     private int experience;
-
-
     //стаж
     private D transport;
 
     public Driver(String driverSFullName,
                   Character thePresenceOfADriverSLicense,
                   int experience,
-                  D transport) {
+                  D transport) throws IllegalAccessException {
 
         if (driverSFullName == null &&
                 !driverSFullName.isEmpty() &&
@@ -31,9 +28,9 @@ public abstract class Driver<D extends Transport & Competing> {
         }
 
         if (thePresenceOfADriverSLicense != 'B' && thePresenceOfADriverSLicense != 'C' && thePresenceOfADriverSLicense != 'D') {
-            throw new NullPointerException("Нет прав, не допущен к поездкам");
+            throw new IllegalAccessException ("Необходимо указать тип прав!");
         } else {
-            this.thePresenceOfADriverSLicense = thePresenceOfADriverSLicense;
+           setThePresenceOfADriverSLicense(thePresenceOfADriverSLicense);
         }
         if (transport != null) {
             this.transport = transport;
@@ -90,16 +87,21 @@ public abstract class Driver<D extends Transport & Competing> {
         }
     }
 
-
+    public void setThePresenceOfADriverSLicense(Character thePresenceOfADriverSLicense) throws IllegalAccessException {
+        if (thePresenceOfADriverSLicense!=null){
+            throw new IllegalAccessException("Необходимо указать категорию прав.");
+        }
+        this.thePresenceOfADriverSLicense = thePresenceOfADriverSLicense;
+    }
 
     public void printDriver() {
-        System.out.println("Водитель " + driverSFullName +", "+
-                "управляет транспортом- " + transport.getBrand() + ", "+"модель- "
-                + transport.getModel()+", "+"прошел отбор на участие в соревнованиях.");
+        System.out.println("Водитель " + driverSFullName + ", " +
+                "управляет транспортом- " + transport.getBrand() + ", " + "модель- "
+                + transport.getModel() + ", " + "прошел отбор на участие в соревнованиях.");
 
-        System.out.println("Имя водителя " + getDriverSFullName() +", "+
-                "категория прав " + getThePresenceOfADriverSLicense() + ", "+"стаж "
-                + getExperience()+" года (лет)");
+        System.out.println("Имя водителя " + getDriverSFullName() + ", " +
+                "категория прав " + getThePresenceOfADriverSLicense() + ", " + "стаж "
+                + getExperience() + " года (лет)");
 
     }
 }
