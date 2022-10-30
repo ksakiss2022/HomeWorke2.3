@@ -23,22 +23,22 @@ public class Train extends Transport {
     }
 
 
-//    public Train(String brand,
-//                 String model,
-//                 int productionYear,
-//                 String productionCountry,
-//                 int movementSpeed,
-//                 double thePriceOfTheTrip,
-//                 String nameOfTheDepartureStation,
-//                 String finalStop,
-//                 int numberOfWagons) {
-//        super(brand, model, productionYear, productionCountry, movementSpeed);
-//
-//        this.thePriceOfTheTrip = thePriceOfTheTrip;
-//        this.nameOfTheDepartureStation = nameOfTheDepartureStation;
-//        this.finalStop = finalStop;
-//        this.numberOfWagons = numberOfWagons;
-//  }
+    public Train(String brand,
+                 String model,
+                 int productionYear,
+                 String productionCountry,
+                 int movementSpeed,
+                 double thePriceOfTheTrip,
+                 String nameOfTheDepartureStation,
+                 String finalStop,
+                 int numberOfWagons) {
+        super(brand, model, productionYear, productionCountry, movementSpeed);
+
+        this.thePriceOfTheTrip = thePriceOfTheTrip;
+        this.nameOfTheDepartureStation = nameOfTheDepartureStation;
+        this.finalStop = finalStop;
+        this.numberOfWagons = numberOfWagons;
+  }
 
     @Override
     public void startMovement() {
@@ -55,15 +55,15 @@ public class Train extends Transport {
         return false;
     }
 
-//    public Train(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
-//        super(brand, model, productionYear, productionCountry, color, movementSpeed);
-//    }
+    public Train(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
+        super(brand, model, productionYear, productionCountry, color, movementSpeed);
+    }
 
-//    @Override
-//    public void refill() {
-//        System.out.println("Необходимо заправить дизелем");
-////Объекты класса train нужно заправлять дизелем.
-//    }
+    @Override
+    public void refill() {
+        System.out.println("Необходимо заправить дизелем");
+//Объекты класса train нужно заправлять дизелем.
+    }
 
 
     public double getThePriceOfTheTrip() {
@@ -129,13 +129,13 @@ public class Train extends Transport {
 
     }
 
-//    public void train() {
-//        super.transport();
-//        System.out.print("Стоимость поездки " + getThePriceOfTheTrip() + ", ");
-//        System.out.print("отходит от " + getNameOfTheDepartureStation() + ", ");
-//        System.out.println("следует до стации " + getFinalStop() + ", ");
-//        System.out.println("в поезде " + getNumberOfWagons() + " вагонов");
-//
-//
-//    }
+    public void train() {
+        super.transport();
+        System.out.print("Стоимость поездки " + getThePriceOfTheTrip() + ", ");
+        System.out.print("отходит от " + getNameOfTheDepartureStation() + ", ");
+        System.out.println("следует до стации " + getFinalStop() + ", ");
+        System.out.println("в поезде " + getNumberOfWagons() + " вагонов");
+
+
+    }
 }

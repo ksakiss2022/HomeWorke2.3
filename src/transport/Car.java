@@ -44,16 +44,16 @@ public class Car extends Transport {
         return false;
     }
 
-//    public Car(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
-//        super(brand, model, productionYear, productionCountry, color, movementSpeed);
-//
-//    }
-//
-//    @Override
-//    public void refill() {
-//        System.out.println("Можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках," +
-//                " если это электрокар.");
-//    }
+    public Car(String brand, String model, int productionYear, String productionCountry, String color, int movementSpeed) {
+        super(brand, model, productionYear, productionCountry, color, movementSpeed);
+
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("Можно заправлять бензином, дизелем на заправке или заряжать на специальных электропарковках," +
+                " если это электрокар.");
+    }
 
     public static class Insurance {
 
@@ -148,30 +148,30 @@ public class Car extends Transport {
     }
 
 
-//    public void car() {
-//        System.out.print(getBrand() + " ");
-//        System.out.print(getModel() + ", ");
-//        System.out.print(getProductionYear() + " год выпуска, ");
-//        System.out.print("сборка " + getProductionCountry() + ", ");
-//        System.out.print("цвет кузова " + getColor() + ", ");
-//        System.out.print("объем двигателя " + engineVolume + " литра");
-//        System.out.println();
-//    }
-//
-//    public void allCar() {
-//        System.out.print(getBrand() + " ");
-//        System.out.print(getModel() + ", ");
-//        System.out.print(getProductionYear() + " год выпуска, ");
-//        System.out.print("сборка " + getProductionCountry() + ", ");
-//        System.out.print("цвет кузова " + getColor() + ", ");
-//        System.out.println("объем двигателя " + engineVolume + " литра, ");
-//        System.out.print("коробка передач " + transmission + " ,");
-//        System.out.print("тип кузова " + bodyType + " ,");
-//        System.out.print("регистрационный номер " + registrationNumber + " ,");
-//        System.out.print("роличество мест " + numberOfSeats + " ,");
-//        System.out.println("резина " + winterTires + " ");
-//        System.out.println();
-//    }
+    public void car() {
+        System.out.print(getBrand() + " ");
+        System.out.print(getModel() + ", ");
+        System.out.print(productionYear + " год выпуска, ");
+        System.out.print("сборка " + productionCountry + ", ");
+        System.out.print("цвет кузова " + color+ ", ");
+        System.out.print("объем двигателя " + engineVolume + " литра");
+        System.out.println();
+    }
+
+    public void allCar() {
+        System.out.print(getBrand() + " ");
+        System.out.print(getModel() + ", ");
+        System.out.print(productionYear + " год выпуска, ");
+        System.out.print("сборка " + productionCountry + ", ");
+        System.out.print("цвет кузова " + color + ", ");
+        System.out.println("объем двигателя " + engineVolume + " литра, ");
+        System.out.print("коробка передач " + transmission + " ,");
+        System.out.print("тип кузова " + bodyType + " ,");
+        System.out.print("регистрационный номер " + registrationNumber + " ,");
+        System.out.print("роличество мест " + numberOfSeats + " ,");
+        System.out.println("резина " + winterTires + " ");
+        System.out.println();
+    }
 
 
     public boolean chekNumberCar() {
@@ -311,25 +311,25 @@ public class Car extends Transport {
 
 
 
-//    int yearDiagnostic;
-//    public Car(String brand, String model, int yearDiagnostic) {
-//        super(brand, model);
-//        this.yearDiagnostic = yearDiagnostic;
-//    }
+    int yearDiagnostic;
+    public Car(String brand, String model, int yearDiagnostic) {
+        super(brand, model);
+        this.yearDiagnostic = yearDiagnostic;
+    }
 
-//    public int getYearDiagnostic() {
-//        return yearDiagnostic;
-//    }
-//
-//    public static boolean checkDiagnostic(Car car) throws PassDiagnosticsException{
-//
-//        if (car.yearDiagnostic >= 2020 && car.yearDiagnostic <= 2022){
-//            System.out.println("Диагностику проходить не нужно.");
-//        }else {
-//            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
-//        }
-//        return false;
-//    }
+    public int getYearDiagnostic() {
+        return yearDiagnostic;
+    }
+
+    public static boolean checkDiagnostic(Car car) throws PassDiagnosticsException{
+
+        if (car.yearDiagnostic >= 2020 && car.yearDiagnostic <= 2022){
+            System.out.println("Диагностику проходить не нужно.");
+        }else {
+            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+        }
+        return false;
+    }
 
 }
 

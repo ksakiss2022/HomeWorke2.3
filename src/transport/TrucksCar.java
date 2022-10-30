@@ -79,6 +79,11 @@ public class TrucksCar extends Transport implements Competing {
 
 
     @Override
+    public void refill() {
+
+    }
+
+    @Override
     public void startMovement() {
         System.out.println("Начать движение.");
 
@@ -178,14 +183,14 @@ public class TrucksCar extends Transport implements Competing {
 //        super(brand, model, engineCapacity);
 //        this.yearDiagnostic = yearDiagnostic;
 //    }
-//
-//    public static boolean checkDiagnosticTruck(TrucksCar trucksCar) throws PassDiagnosticsException {
-//
-//        if (trucksCar.yearDiagnostic >= 2020 && trucksCar.yearDiagnostic <= 2022){
-//            System.out.println("Диагностику проходить не нужно.");
-//        }else {
-//            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
-//        }
-//        return false;
-//    }
+
+    public static boolean checkDiagnosticTruck(TrucksCar trucksCar) throws PassDiagnosticsException {
+
+        if (trucksCar.yearDiagnostic >= 2020 && trucksCar.yearDiagnostic <= 2022){
+            System.out.println("Диагностику проходить не нужно.");
+        }else {
+            throw new PassDiagnosticsException("Необходимо пройти диагностику.");
+        }
+        return false;
+    }
 }

@@ -2,7 +2,6 @@ package HomeWorke2_7;
 
 import Driver.DriverC;
 import transport.BodyTypePassebgerCars;
-import transport.Car;
 import transport.PassengerCars;
 import transport.TrucksCar;
 
@@ -16,7 +15,7 @@ public class Main {
 
         TrucksCar trucksCar1 = new TrucksCar("BMW", "x5", 1.5f, 2022);
         trucksCar1.diagnosticTransport();
-        PassengerCars passengerCars1 = new PassengerCars("kia", "rio", BodyTypePassebgerCars.SEDAN, 2022);
+        PassengerCars passengerCars1 = new PassengerCars("kia", "rio", BodyTypePassebgerCars.PICKUP_TRUCK, 2022);
         passengerCars1.diagnosticTransport();
         DriverC driverC = new DriverC("Иванов Петр Петрович",null
                 ,24,

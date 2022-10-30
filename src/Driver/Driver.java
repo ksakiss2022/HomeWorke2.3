@@ -22,7 +22,7 @@ public abstract class Driver<D extends Transport & Competing> {
         if (driverSFullName == null &&
                 !driverSFullName.isEmpty() &&
                 !driverSFullName.isBlank()) {
-            throw new NullPointerException("Укажите имя водителя ");
+            throw new IllegalAccessException("Укажите имя водителя ");
         } else {
             this.driverSFullName = driverSFullName;
         }
@@ -42,7 +42,7 @@ public abstract class Driver<D extends Transport & Competing> {
     public void refuelingTheCar() {
         // заправить авто
         System.out.println("Заправляю транспорт");
-//        System.out.println("Заправляю транспорт"+transport.getBrand()+"]");
+    System.out.println("Заправляю транспорт"+transport.getBrand()+"]");
     }
 
 
