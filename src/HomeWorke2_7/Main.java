@@ -15,11 +15,11 @@ public class Main {
 
         TrucksCar trucksCar1 = new TrucksCar("BMW", "x5", 1.5f, 2022);
         trucksCar1.diagnosticTransport();
-        PassengerCars passengerCars1 = new PassengerCars("kia", "rio", BodyTypePassebgerCars.PICKUP_TRUCK, 2022);
-        passengerCars1.diagnosticTransport();
-        DriverC driverC = new DriverC("Иванов Петр Петрович",null
-                ,24,
-                null);
+//        PassengerCars passengerCars1 = new PassengerCars("kia", "rio", BodyTypePassebgerCars.PICKUP_TRUCK, 2022);
+//        passengerCars1.diagnosticTransport();
+//        DriverC driverC = new DriverC("Иванов Петр Петрович",null
+//                ,24,
+//                null);
     }
 }
 //    public DriverC(String driverSFullName,

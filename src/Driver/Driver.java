@@ -88,7 +88,7 @@ public abstract class Driver<D extends Transport & Competing> {
     }
 
     public void setThePresenceOfADriverSLicense(Character thePresenceOfADriverSLicense) throws IllegalAccessException {
-        if (thePresenceOfADriverSLicense!=null){
+        if (thePresenceOfADriverSLicense==null){
             throw new IllegalAccessException("Необходимо указать категорию прав.");
         }
         this.thePresenceOfADriverSLicense = thePresenceOfADriverSLicense;
@@ -103,6 +103,14 @@ public abstract class Driver<D extends Transport & Competing> {
                 "категория прав " + getThePresenceOfADriverSLicense() + ", " + "стаж "
                 + getExperience() + " года (лет)");
 
+    }
+
+    @Override
+    public String toString() {
+        return "Имя водителя- " + driverSFullName  +
+                ", наличие водительских прав- " + thePresenceOfADriverSLicense +
+                ", опыт = " + experience +
+                ", управляет транспортным средством-" + transport;
     }
 }
 

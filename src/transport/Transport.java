@@ -1,12 +1,34 @@
 package transport;
 
+import Driver.Driver;
 import HomeWorke2_7.PassDiagnosticsException;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport {
 
 
+    private final List<Driver<?>> drivers = new ArrayList<>();
+    private final List<Mechanic<?>> mechanics = new ArrayList<>();
+
+
+    private final List<RaceSponsor> raceSponsors = new ArrayList<>();
+
+    public void addDriver(Driver<?> ...drivers) {
+
+        this.drivers.addAll(Arrays.asList(drivers));
+    }
+
+    public void addMechanic(Mechanic<?>... mechanics) {
+        this.mechanics.addAll(Arrays.asList(mechanics));
+    }
+
+    public void addRaceSponsor(RaceSponsor... raceSponsor) {
+       this.raceSponsors.addAll(Arrays.asList(raceSponsor));
+    }
 
     private String brand;
     private String model;
@@ -15,7 +37,12 @@ public abstract class Transport {
     protected int productionYear;
     protected String productionCountry;
     protected String color;
+
     public abstract void refill();
+
+    public abstract void repair();
+
+    public abstract void service();
 
     protected void transport() {
     }
@@ -29,6 +56,7 @@ public abstract class Transport {
     public Transport(String brand, String model) {
         setBrand(brand);
         setModel(model);
+
     }
 
     public Transport(String brand, String model, float engineCapacity) {
@@ -36,6 +64,7 @@ public abstract class Transport {
         setModel(model);
         setEngineCapacity(engineCapacity);
     }
+
     public Transport(String brand,
                      String model,
                      int productionYear,
@@ -67,6 +96,7 @@ public abstract class Transport {
         this.color = color;
         this.movementSpeed = movementSpeed;
     }
+
     public float getEngineCapacity() {
         return engineCapacity;
     }
@@ -74,13 +104,37 @@ public abstract class Transport {
     public String getBrand() {
         return brand;
     }
+
     public String getModel() {
         return model;
     }
+
     public int getMovementSpeed() {
         return movementSpeed;
     }
+    public List<Mechanic<?>> getMechanics() {
+        return mechanics;
+    }
 
+    @Override
+    public String toString() {
+        return "Транспорт: " +
+                ", марка: " + brand +
+                ", модель: " + model +
+                ", мощность двигателя =" + engineCapacity +
+                ", скорость движения =" + movementSpeed +
+                ", год выпуска: " + productionYear +
+                ", страна производства: " + productionCountry + '\'' +
+                ", цвет: " + color;
+    }
+
+    public List<RaceSponsor> getRaceSponsors() {
+        return raceSponsors;
+    }
+
+    public List<Driver<?>> getDrivers() {
+        return drivers;
+    }
 
     public void setBrand(String brand) {
         this.brand = brand;
@@ -95,6 +149,7 @@ public abstract class Transport {
             this.model = "Модель автомобиля не задана";
         }
     }
+
     public void setEngineCapacity(float engineCapacity) {
         if (engineCapacity <= 0) {
             this.engineCapacity = 1.5f;
@@ -102,6 +157,7 @@ public abstract class Transport {
             this.engineCapacity = Math.abs(engineCapacity);
         }
     }
+
     public void setMovementSpeed(int movementSpeed) {
         this.movementSpeed = movementSpeed;
         if (movementSpeed <= 0) {
@@ -129,9 +185,11 @@ public abstract class Transport {
         startMovement();
         endMovement();
     }
+
     public void printType() {
 
     }
+
     public void printBrandModel() {
         System.out.println("Марка транспортного средства- " + brand + ",");
         System.out.println("модель транспортного средства- " + model + ", ");
@@ -139,7 +197,6 @@ public abstract class Transport {
         endMovement();
 
     }
-
 
 
 //    public abstract class Refill {
@@ -243,7 +300,7 @@ public abstract class Transport {
 //
 
 
-//    public void transport() {
+    //    public void transport() {
 //
 //        System.out.print("Вид трансорта " + getBrand() + ", ");
 //        System.out.print("модель " + getModel() + ", ");
@@ -253,5 +310,7 @@ public abstract class Transport {
 //        System.out.println();
 //    }
     public abstract boolean diagnosticTransport() throws PassDiagnosticsException;
+
+
 }
 

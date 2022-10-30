@@ -330,6 +330,14 @@ public class Car extends Transport {
         }
         return false;
     }
+    @Override
+    public void service() {
+        System.out.println("Машина - "+ getBrand()+", "+getModel()+" прошла техническое обслуживаение.");
+    }
+    @Override
+    public void repair() {
+        System.out.println(getBrand()+", "+getModel()+" требует ремонта.");
+    }
 
 }
 

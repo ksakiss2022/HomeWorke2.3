@@ -138,4 +138,13 @@ public class Train extends Transport {
 
 
     }
+    @Override
+    public void service() {
+        System.out.println("Трамвай - "+ getBrand()+", "+getModel()+" прошел техническое обслуживаение.");
+    }
+    @Override
+    public void repair() {
+        System.out.println(getBrand()+", "+getModel()+" требует ремонта.");
+    }
+
 }

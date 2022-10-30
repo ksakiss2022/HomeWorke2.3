@@ -179,8 +179,18 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public void service() {
+        System.out.println("Автобус- "+ getBrand()+", "+getModel()+" прошел техническое обслуживаение.");
+    }
+
+    @Override
     public void refill() {
         System.out.println("Заправлять бензином или дизелем на заправке.");
+    }
+
+    @Override
+    public void repair() {
+        System.out.println(getBrand()+", "+getModel()+" требует ремонта.");
     }
 
     public void printBus() {

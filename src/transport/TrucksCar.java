@@ -193,4 +193,13 @@ public class TrucksCar extends Transport implements Competing {
         }
         return false;
     }
+    @Override
+    public void service() {
+        System.out.println("Грузовой автомобиль- "+ getBrand()+", "+getModel()+" прошел техническое обслуживаение.");
+    }
+    @Override
+    public void repair() {
+        System.out.println(getBrand()+", "+getModel()+" требует ремонта.");
+    }
+
 }

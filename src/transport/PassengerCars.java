@@ -211,5 +211,14 @@ private final BodyTypePassebgerCars bodyTypePassebgerCars;
         }
         return false;
     }
+    @Override
+    public void service() {
+        System.out.println("Автомобиль- "+ getBrand()+", "+getModel()+" прошел техническое обслуживаение.");
+    }
+    @Override
+    public void repair() {
+        System.out.println(getBrand()+", "+getModel()+" требует ремонта.");
+    }
+
 }
 
