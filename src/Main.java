@@ -27,8 +27,8 @@ public class Main {
                 "Синий",
                 CapacityTruck.N1);
         zil.addDriver(new DriverC("Зураб", 'C', 5, zil));
-zil.addRaceSponsor(gazprom);
-zil.addMechanic(dmitry);
+        zil.addRaceSponsor(gazprom);
+        zil.addMechanic(dmitry);
         zil.printTransport();
 //        zil.turnOnTheHeadlights();
 //        zil.trainMaxSpeed(TrucksCar.FIRST_SPEED_CHECK_IN);
@@ -201,9 +201,9 @@ zil.addMechanic(dmitry);
                 zil, kamaz, ural, gaz,
                 liazBus, hondaBus, mersedecBus, gazellBus,
                 skoda, hyunday, honda, bmw1);
-            for (Transport transport:transports){
-                    printHomeWork2_8(transport);
-            }
+        for (Transport transport : transports) {
+            printHomeWork2_8(transport);
+        }
 //
 //        DriverC zurab = new DriverC("Зураб", 'C', 5, zil);
 //        DriverC nikolay = new DriverC("Николай", 'C', 15, ural);
@@ -605,13 +605,30 @@ zil.addMechanic(dmitry);
 //            System.out.println(text);
 //
 //        }
+        ServiceStation<TrucksCar> MasterTrucksCar = new ServiceStation<>(". Мастер по приемки Петров Константин.");
+        MasterTrucksCar.addACarToTheQueue(zil);
+        MasterTrucksCar.addACarToTheQueue(kamaz);
+        MasterTrucksCar.addACarToTheQueue(ural);
+        MasterTrucksCar.addACarToTheQueue(gaz);
+
+        MasterTrucksCar.performACarInspection();
+        ServiceStation<PassengerCars> MasterCar = new ServiceStation<>(". Мастер по приемки Петров Константин.");
+        MasterCar.addACarToTheQueue(bmw1);
+        MasterCar.addACarToTheQueue(skoda);
+
+
+        MasterCar.performACarInspection();
+
+
     }
-    private static void printHomeWork2_8(Transport transport){
-            System.out.println("Транспортное средство"+ transport.getBrand()+", "+transport.getModel());
-            System.out.println("Водитель "+transport.getDrivers());
-            System.out.println("Механик "+transport.getMechanics());
-            System.out.println("Спонсор "+transport.getRaceSponsors());
+
+    private static void printHomeWork2_8(Transport transport) {
+        System.out.println("Транспортное средство" + transport.getBrand() + ", " + transport.getModel());
+        System.out.println("Водитель " + transport.getDrivers());
+        System.out.println("Механик " + transport.getMechanics());
+        System.out.println("Спонсор " + transport.getRaceSponsors());
     }
+
 
 }
 
