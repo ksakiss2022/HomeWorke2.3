@@ -22,13 +22,13 @@ public abstract class Driver<D extends Transport & Competing> {
         if (driverSFullName == null &&
                 !driverSFullName.isEmpty() &&
                 !driverSFullName.isBlank()) {
-            throw new IllegalAccessException("Укажите имя водителя ");
+            throw new IllegalArgumentException("Укажите имя водителя ");
         } else {
             this.driverSFullName = driverSFullName;
         }
 
         if (thePresenceOfADriverSLicense != 'B' && thePresenceOfADriverSLicense != 'C' && thePresenceOfADriverSLicense != 'D') {
-            throw new IllegalAccessException ("Необходимо указать тип прав!");
+            throw new IllegalArgumentException ("Необходимо указать тип прав!");
         } else {
            setThePresenceOfADriverSLicense(thePresenceOfADriverSLicense);
         }
