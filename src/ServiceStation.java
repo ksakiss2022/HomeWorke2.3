@@ -1,10 +1,11 @@
 import transport.Transport;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class ServiceStation<T extends Transport> {
-public String masterReceiver;
+    public String masterReceiver;
 
     public ServiceStation(String masterReceiver) {
         this.masterReceiver = masterReceiver;
@@ -18,25 +19,24 @@ public String masterReceiver;
     }
 
 
-
-
     public void performACarInspection() {
         //«провести техосмотр авто».
         T transport = queue.poll();
         if (transport != null) {
             System.out.println("Транспортное средство- " + transport.getBrand() + ", "
-                    + transport.getModel() + " - проходит сервисное обслуживание"+masterReceiver);
+                    + transport.getModel() + " - проходит сервисное обслуживание" + masterReceiver);
             performACarInspection();
 
-        }else {
+        } else {
             System.out.println("Очередь пуста.");
         }
 
     }
 
-    public int queueSize (){
+    public int queueSize() {
         return queueSize();
     }
+
 
 }
 
