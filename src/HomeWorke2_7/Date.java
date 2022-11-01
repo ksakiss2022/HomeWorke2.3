@@ -33,10 +33,10 @@ public class Date {
         }
 
         if (!validate(password)) {
-            throw new WrongLoginException("Пароль не верный");
+            throw new WrongPasswordException("Пароль не верный");
         }
         if (!password.equals(confirmPassword)) {
-            throw new WrongLoginException("Проверьте, пароль не совпадает");
+            throw new WrongPasswordException("Проверьте, пароль не совпадает");
         }
     }
 
