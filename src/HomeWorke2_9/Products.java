@@ -20,9 +20,9 @@ public class Products {
 //Названия всех продуктов должны быть на русском языке.
 
     private static final String PRODUCTS_SYMBOL = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ-";
-    private String product;
-    private float price;
-    private int quantity;
+    protected String product;
+    protected float price;
+    protected int quantity;
 
     public Products(String product, float price, int quantity) {
         this.product = product;
@@ -95,6 +95,8 @@ public class Products {
         System.out.println("кол-во- " + quantity + ".");
 
     }
+
+
 }
 
 
