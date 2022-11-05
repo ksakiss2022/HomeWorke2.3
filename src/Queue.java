@@ -13,9 +13,28 @@ public class Queue implements java.util.Queue<String> {
     );
     private static final Random RANDOM = new Random();
     private static final int MAX_SIZE = 5;
-    private static void addGalya(String name,
-                            java.util.Queue<String> queue2,
-                            java.util.Queue<String> queue1) {
+
+    public static void main(String[] args) {
+        java.util.Queue<String> queue2 = new ArrayDeque<>();
+        java.util.Queue<String> queue1 = new ArrayDeque<>();
+        randomFilling((Queue) queue1);
+        randomFilling((Queue) queue2);
+        System.out.println("Очередь 1" + queue1);
+        System.out.println("Очередь 2" + queue2);
+        System.out.println();
+        add("Рыбкина Ольга Юрьевна", (Queue) queue1, (Queue) queue2);
+        System.out.println("Очередь 1" + queue1);
+        System.out.println("Очередь 2" + queue2);
+        System.out.println();
+        remove((Queue) queue1, (Queue) queue2);
+        System.out.println("Очередь 1" + queue1);
+        System.out.println("Очередь 2" + queue2);
+        System.out.println();
+    }
+
+    private static void add(String name,
+                            Queue queue1,
+                            Queue queue2) {
         if (queue1.size() == MAX_SIZE && queue2.size() == MAX_SIZE) {
             System.out.println("Нужно позвать Галю!");
             return;
@@ -24,32 +43,13 @@ public class Queue implements java.util.Queue<String> {
             queue1.offer(name);
         } else {
             queue2.offer(name);
+
+
         }
     }
 
-    public static void main(String[] args) {
-        Queue<String> queue1 = new ArrayDeque<>();
-        Queue<String> queue2 = new ArrayDeque<>();
-
-        randomFilling(queue1);
-        randomFilling(queue2);
-        System.out.println("Очередь 1" + queue1);
-        System.out.println("Очередь 2" + queue2);
-        System.out.println();
-        addGalya("Рыбкина Ольга Юрьевна",queue1,queue2 );
-        System.out.println("Очередь 1" + queue1);
-        System.out.println("Очередь 2" + queue2);
-        System.out.println();
-        remove(queue1,queue2);
-        System.out.println("Очередь 1" + queue1);
-        System.out.println("Очередь 2" + queue2);
-        System.out.println();
-    }
-
-
-
-    private static void remove(java.util.Queue<String> queue2,
-                               java.util.Queue<String> queue1) {
+    private static void remove(Queue queue1,
+                               Queue queue2) {
         if (RANDOM.nextBoolean()) {
             queue1.poll();
         } else {

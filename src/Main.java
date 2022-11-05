@@ -13,6 +13,7 @@ import java.util.List;
 
 
 public class Main {
+
     public static void main(String[] args) throws IllegalAccessException {
         Mechanic<Car> dmitry = new Mechanic<Car>("Механик- Дмитрий Иванов ", " Сервис автообслуживания компани.");
         Mechanic<Car> kostya = new Mechanic<Car>("Механик-Константин Сидиров ", " Сервис автообслуживания компани.");

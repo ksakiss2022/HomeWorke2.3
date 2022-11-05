@@ -44,8 +44,6 @@ public abstract class Transport {
 
     public abstract void service();
 
-    protected void transport() {
-    }
 
     public abstract void startMovement();
 
@@ -312,5 +310,7 @@ public abstract class Transport {
     public abstract boolean diagnosticTransport() throws PassDiagnosticsException;
 
 
+    protected void transport() {
+    }
 }
 
